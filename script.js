@@ -1,8 +1,8 @@
 $(document).ready(function() {
+
     // HEADING DATE
     var $headingDate = $("#currentDay");
     $headingDate.text(moment().format("dddd, MMMM Do"));
-
 
     // FILL PLANNER
     var storedPlans = JSON.parse(localStorage.getItem("storedPlans"));
@@ -12,7 +12,6 @@ $(document).ready(function() {
     else {
         plannerText = new Array(9);
     };
-    
     
     // MAIN DIV
     var $mainDiv = $("#plannerContainer");
@@ -47,8 +46,8 @@ $(document).ready(function() {
         }
         $timeBlock.text(`${displayTime} ${mer}`);
 
+        $colTime.append($timeBlock);
         $rowDiv.append($colTime);
-        $colTime.append($timeBlock)
 
         // INPUT COLUMN
         var $colInput = $("<div>");
@@ -68,13 +67,13 @@ $(document).ready(function() {
         var $colSave = $("<div>");
         $colSave.addClass("col-md-2");
 
-        var $saveBtn = $("<i>");
+        var $saveBtn = $("<button>");
         $saveBtn.attr("id", `saveid-${index}`);
         $saveBtn.attr("save-id", index);
         $saveBtn.attr("class", "fas fa-save");
 
-        $rowDiv.append($colSave);
         $colSave.append($saveBtn);
+        $rowDiv.append($colSave);
 
         rowColors($rowDiv, hour);
         $mainDiv.append($rowDiv);
@@ -94,7 +93,7 @@ $(document).ready(function() {
     };
 
     // SAVE TO LOCAL STORAGE
-    $(document).on("click", "i", function(event) {
+    $(document).on("click", "button", function(event) {
         event.preventDefault();
 
         var $index = $(this).attr("save-id");

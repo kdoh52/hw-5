@@ -2,16 +2,6 @@ body {
   font-family: 'Open Sans', sans-serif;
   font-size: 16px;
   line-height: 1;
-  /* color: black; */
-}
-
-textarea{
-  background: transparent;
-  border: none;
-  resize: none;
-  color: #000000;
-  border-left: 1px solid black;
-  padding: 10px;
 }
 
 .jumbotron {
@@ -22,66 +12,56 @@ textarea{
   border-bottom: 10px solid black;
 }
 
-/* .description{
+.row {
   white-space: pre-wrap;
-} */
+  height: 80px;
+}
+
+.plannerRow {
+  margin: 10px;
+}
 
 .timeBlock{
   text-align: center;
   border-radius: 20px;
   background-color: #ffffff;
-  color: #000000;
+  color: black;
   padding: 10px;
-  /* border-top: 12px #000000; */
+  position: relative;
+  top: 32px;
+  height: 50%;
+  width: 90%;
 }
-
-.row {
-  white-space: pre-wrap;
-  height: 80px;
-  border-top: 1px solid white;
-}
-
-/* .hour {
-  background-color: #ffffff;
-  color: #000000;
-  border-top: 1px dashed #000000;
-} */
-/* 
-.past {
-  background-color: #d3d3d3;
-  color: white;
-}
-
-.present {
-  background-color: #ff6961;
-  color: white;
-}
-
-.future {
-  background-color: #77dd77;
-  color: white;
-} */
 
 .hrInput {
   color: black;  
   font-size: 12pt;
   height:50%;
   width: 90%;
+  position: relative;
+  top: 20px;
 }
 
-.saveBtn {
-  border-left: 1px solid black;
-  border-top-right-radius: 15px;
-  border-bottom-right-radius: 15px;
+.fas {
+  position: relative;
+  top: 20px;
+  font-size: 1.2em;
   background-color: #06AED5;
-  color: white;
+  height: 50%;
+  width: 90%;
 }
 
-.saveBtn i:hover {
-  font-size: 20px;
-  transition: all .3s ease-in-out;
-}
 
-#plannerContainer {
-  color: #000000;
+@media (max-width: 768px) {
+  .plannerRow {
+    height: 150px;
+  }
+  .hrInput {
+    position: relative;
+    top: 30px;
+  }
+  .fas {
+    position: relative;
+    top: 15px;
+  }
 }
